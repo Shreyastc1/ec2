@@ -1,7 +1,7 @@
 variable "aws_region" {
   description = "AWS region"
   type        = string
-  default     = "ap-southeast-1"
+  default     = "ap-south-2"
 }
 variable "cidr_block" {
   type = string
@@ -18,11 +18,11 @@ variable "subnet_cidr_block2" {
 
 variable "availability_zone1" {
   description = "Availability zone for the subnet"
-  default = "ap-southeast-1a"  # Change to your desired availability zone
+  default = "ap-south-2a"  # Change to your desired availability zone
 }
 variable "availability_zone2" {
   description = "Availability zone for the subnet"
-  default = "ap-southeast-1b"  # Change to your desired availability zone
+  default = "ap-south-2b"  # Change to your desired availability zone
 }
 variable "ami_id" {
   description = "AMI ID"
