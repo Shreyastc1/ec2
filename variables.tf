@@ -53,7 +53,4 @@ variable "ec2_instance_name" {
   default     = "MyEC2Instance"
 }
  
-variable "s3_bucket_name" {
-  description = "Name for S3 bucket"
-  default     = "my-unique-bucket-name"
-}
+
