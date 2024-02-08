@@ -1,62 +1,59 @@
 variable "aws_region" {
   description = "AWS region"
-  type        = string
-  default     = "ap-south-2"
+  default     = "ap-south-1"
 }
-variable "cidr_block" {
-  type = string
-  default= " 10.0.0./16"
+ 
+variable "vpc_cidr" {
+  description = "CIDR block for VPC"
+  default     = "192.21.0.0/16"
 }
-variable "subnet_cidr_block1" {
-  description = "CIDR block for the subnet"
-  default = "1o.0.0.0/24"  # Change to your desired subnet CIDR block
+ 
+variable "public_subnet_cidr" {
+  description = "CIDR block for public subnet"
+  default     = "192.21.0.0/17"
 }
-variable "subnet_cidr_block2" {
-  description = "CIDR block for the subnet"
-  default = "190.0.1.0/24" 
-} 
-
-variable "availability_zone1" {
+ 
+variable "availability_zone" {
   description = "Availability zone for the subnet"
-  default = "ap-south-2a"  # Change to your desired availability zone
+  default     = "ap-south-1a"
 }
-variable "availability_zone2" {
-  description = "Availability zone for the subnet"
-  default = "ap-south-2b"  # Change to your desired availability zone
+ 
+variable "vpc_name" {
+  description = "Name tag for VPC"
+  default     = "MyVPC"
 }
-variable "ami_id" {
-  description = "AMI ID"
-  default = "ami-052f483c20fa1351a"
+ 
+variable "public_subnet_name" {
+  description = "Name tag for public subnet"
+  default     = "PublicSubnet"
 }
-
-variable "instance_type" {
-  description = "EC2 instance type"
+ 
+variable "public_route_table_name" {
+  description = "Name tag for public route table"
+  default     = "PublicRouteTable"
+}
+ 
+variable "security_group_name" {
+  description = "Name tag for security group"
+  default     = "MySecurityGroup"
+}
+ 
+variable "ec2_ami" {
+  description = "AMI ID for EC2 instance"
+  default     = "ami-12345678"
+}
+ 
+variable "ec2_instance_type" {
+  description = "Instance type for EC2 instance"
   default     = "t2.micro"
 }
-
-variable "key_name" {
-  description = "SSH key pair name"
-  type        = string
-  default = "yes"
+ 
+variable "ec2_instance_name" {
+  description = "Name tag for EC2 instance"
+  default     = "MyEC2Instance"
 }
-variable "alb_name" {
-  description = "Name for the ALB"
-  default = "my-alb"  # Change to your desired ALB name
-}
-variable "enable_deletion_protection" {
-  description = "Enable deletion protection for the ALB"
-  type        = bool
-  default     = false  # Set to true if you want to enable deletion protection
-}
-
-
-variable "target_group_port" {
-    default = 80
-}
-
-variable "protocol" {
-    default = HTTP
-}
-variable "listener_port" {
-    default = 80
+ 
+variable "s3_bucket_name" {
+  description = "Name for S3 bucket"
+  default     = "my-unique-bucket-name"
 }
